@@ -222,5 +222,5 @@ RUN rm -rf ${SOFTDIR_TAR}/casa${CASA_VERSION}.tar.gz
 RUN echo "export LD_LIBRARY_PATH=/usr/local/lib/R/site-library/RInside/lib:/opt/root/lib:/lib:/opt/OpenCV/lib:/opt/jsoncpp/lib:/opt/jsoncpp/lib" >> /root/.bashrc && \
     echo "export LD_LIBRARY_PATH=/usr/local/lib/R/site-library/RInside/lib:/opt/root/lib:/lib:/opt/OpenCV/lib:/opt/jsoncpp/lib:/opt/jsoncpp/lib" >> /home/openmpi/.bashrc
 
-COPY hostGenerator.sh /kube-openmpi/utils/hostGenerator.sh
+COPY hostGenerator.sh /
 COPY init.sh /init.sh

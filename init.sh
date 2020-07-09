@@ -6,6 +6,9 @@
 sleep 5
 echo "sshd started pid=$(ps auwx |grep [s]sh |  awk '{print $2}')"
 
+sh /hostGenerator.sh 2>&1 &
+echo "started host Generator"
+
 if [ ! "z$ONE_SHOT" = "z" ]; then
   bash -c "$*"
   return_code=$?
@@ -15,5 +18,4 @@ else
 fi
 echo -n "$return_code" > /dev/termination-log
 echo -n "$return_code" > $GUILLOTINE/execute
-/kube-openmpi/utils/hostGenerator.sh 2>&1 &
 exit $return_code
